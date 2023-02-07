@@ -6,13 +6,17 @@ import (
 	"sync"
 	"time"
 
-	"github.com/daopmdean/rate-limiter-demo/api"
+	apiv2 "github.com/daopmdean/rate-limiter-demo/api-v2"
 )
 
 func main() {
+	testApi()
+}
+
+func testApi() {
 	defer fmt.Println("Exit Server")
 
-	server := api.Open()
+	server := apiv2.Open()
 
 	var wg sync.WaitGroup
 	wg.Add(20)

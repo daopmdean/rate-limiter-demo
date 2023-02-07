@@ -13,7 +13,7 @@ type APIConn struct {
 
 func Open() *APIConn {
 	return &APIConn{
-		rateLimiter: rate.NewLimiter(rate.Every(time.Second), 2),
+		rateLimiter: rate.NewLimiter(rate.Every(time.Second), 5),
 	}
 }
 
